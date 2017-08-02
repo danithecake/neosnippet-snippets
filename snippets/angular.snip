@@ -1,0 +1,39 @@
+snippet cmp
+abbr Angular component
+options head
+  function ${1}Component(${2}) {
+    var ctrl = this;
+
+    ${0}
+  }
+
+  $1Component.$inject = [$2];
+
+  ${3:angular.module(${4\})}.component('$1${5}', {
+    controller: $1Component
+  });
+
+snippet ngiss
+abbr angular.isString
+options word
+  angular.isString(${1:TARGET})${0}
+
+snippet ngisf
+abbr angular.isFunction
+options word
+  angular.isFunction(${1:TARGET})${0}
+
+snippet ngisn
+abbr angular.isNumber
+options word
+  angular.isNumber(${1:TARGET})${0}
+
+snippet ngisa
+abbr angular.isArray
+options word
+  angular.isArray(${1:TARGET})${0}
+
+snippet ngiso
+abbr angular.isObject
+options word
+  angular.isObject(${1:TARGET})${0}

@@ -1,0 +1,71 @@
+snippet fn
+abbr Function definition
+options word
+  function${1:#:}(${2}) {
+    ${3}
+  };${0}
+
+snippet eif
+abbr else if block
+options word
+  else if (${0})
+
+snippet for
+abbr for loop
+options word
+  for (${1:var} ${2:i} = ${3:0}; $2 ${4:<} ${5}; $2${6:++}) {
+    ${0}
+  }
+
+snippet fore
+abbr forEach loop
+options word
+  .forEach(function(${1:elem}) {
+    ${0}
+  });
+
+snippet ty
+abbr Ternary expression
+options word
+  ${1} ? ${2} : ${0}
+
+snippet pp
+abbr Public property
+options word
+  ${1:this}.${2} = ${0}
+
+snippet ok
+abbr Object key
+options word
+  ${1}: ${0},
+
+snippet cl
+abbr console.log()
+options word
+  console.log(${0});
+
+snippet req
+abbr CommonJS require
+options word
+  require(${1});${0}
+
+snippet mex
+abbr CommonJS module.exports
+options word
+  module.exports = ${0}
+
+snippet dprty
+abbr Object.defineProperty
+options word
+  Object.defineProperty(${1:this}, '${2}', {
+    ${0}
+  });
+
+snippet dprts
+abbr Object.defineProperties
+options word
+  Object.defineProperties(${1:this}, {
+    ${2}: {
+      ${0}
+    },
+  });

@@ -1,0 +1,9 @@
+snippet grep
+abbr Recursive grep with include pattern
+options word
+  grep ${4:-rne} ${2:--include='*.${3\}'} --color=auto '${1}' ${0:.}
+
+snippet find
+abbr Find files by default with find command
+options word
+  find ${0:.} ${4:-type ${5:f\}} ${1:-${3:i\}name '${2\}'}
