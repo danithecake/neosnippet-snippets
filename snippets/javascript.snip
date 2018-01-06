@@ -1,8 +1,13 @@
+snippet vv
+abbr var statement
+options word
+  var ${1} = ${0};
+
 snippet fn
 abbr Function definition
 options word
   function${1:#:}(${2}) {
-    ${3}
+    ${3:TARGET}
   };${0}
 
 snippet eif
@@ -13,15 +18,18 @@ options word
 snippet for
 abbr for loop
 options word
-  for (${1:var} ${2:i} = ${3:0}; $2 ${4:<} ${5}; $2${6:++}) {
-    ${0}
-  }
+  for (${1:var} ${2:i} = ${3:0}; $2 ${4:<} ${5}; $2${6:++}) ${0:TARGET}
+
+snippet forr
+abbr for loop(reverse)
+options word
+  for (${1:var} ${2:i} = ${3:0}; $2${4:++};${5:#:}) ${0:TARGET}
 
 snippet fore
 abbr forEach loop
 options word
   .forEach(function(${1:elem}) {
-    ${0}
+    ${0:TARGET}
   });
 
 snippet ty
@@ -29,20 +37,25 @@ abbr Ternary expression
 options word
   ${1} ? ${2} : ${0}
 
-snippet pp
-abbr Public property
+snippet t
+abbr this keyword
 options word
-  ${1:this}.${2} = ${0}
+  this.${0}
 
-snippet ok
-abbr Object key
+snippet :
+abbr Dict property
 options word
-  ${1}: ${0},
+  ${1}: ${2},${0}
+
+snippet =
+abbr Assign operator
+options word
+  ${1} = ${0}
 
 snippet cl
 abbr console.log()
 options word
-  console.log(${0});
+  console.log(${0:TARGET});
 
 snippet req
 abbr CommonJS require
@@ -54,14 +67,14 @@ abbr CommonJS module.exports
 options word
   module.exports = ${0}
 
-snippet dprty
+snippet dpy
 abbr Object.defineProperty
 options word
   Object.defineProperty(${1:this}, '${2}', {
     ${0}
   });
 
-snippet dprts
+snippet dps
 abbr Object.defineProperties
 options word
   Object.defineProperties(${1:this}, {
@@ -69,3 +82,41 @@ options word
       ${0}
     },
   });
+
+snippet mcm
+abbr Multiline comment string
+options word
+  /** ${0} */
+
+# ES6 features
+snippet imp
+abbr ES6 import
+options word
+  import ${1} from '${0}';
+
+snippet ex
+abbr ES6 exports
+options word
+  export ${1:default} ${0}
+
+snippet af
+abbr ES6 arrow function
+options word
+  ${1:(${2\})} => ${0:TARGET}
+
+snippet cls
+abbr ES6 class statement
+options word
+  class ${1} ${2:extends ${3\}}{
+    ${0:TARGET}
+  }
+
+snippet vl
+abbr ES6 let statement
+options word
+  let ${1} = ${0};
+
+snippet vc
+abbr ES6 conts statement
+options word
+  const ${1} = ${0};
